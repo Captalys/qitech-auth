@@ -53,7 +53,7 @@ The API is small and there are only two functions `sign` and `unsign`.
                           :endpoint "https://api-auth.sandbox.qitech.app/test/{api-key}"}))
 
 (def ret (http/post url {:body (:request-body data-signed)
-                         :headers (:request-headers data-signed)}))
+                         :headers (:request-header data-signed)}))
 (def ret-unsigned (q/unsign ret)) ;; => {:data "all-your-payload"}
 ```
 
