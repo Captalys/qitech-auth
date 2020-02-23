@@ -1,4 +1,4 @@
-# qitech-auth
+# qitech-auth [![Clojars Project](https://img.shields.io/clojars/v/qitech-auth.svg)](https://clojars.org/qitech-auth)
 
 A Clojure library designed to help users to build valid
 requests to QI TECH services.
