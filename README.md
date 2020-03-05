@@ -1,4 +1,4 @@
-# qitech-auth
+# qitech-auth [![Clojars Project](https://img.shields.io/clojars/v/qitech-auth.svg)](https://clojars.org/qitech-auth)
 
 A Clojure library designed to help users to build valid
 requests to QI TECH services.
@@ -53,7 +53,7 @@ The API is small and there are only two functions `sign` and `unsign`.
                           :endpoint "https://api-auth.sandbox.qitech.app/test/{api-key}"}))
 
 (def ret (http/post url {:body (:request-body data-signed)
-                         :headers (:request-headers data-signed)}))
+                         :headers (:request-header data-signed)}))
 (def ret-unsigned (q/unsign ret)) ;; => {:data "all-your-payload"}
 ```
 
