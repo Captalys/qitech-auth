@@ -13,7 +13,7 @@
 (s/def ::method #{"GET" "POST" "PUT" "OPTION"})
 (s/def ::content-type string?)
 (s/def ::endpoint string?)
-(s/def ::body map?)
+(s/def ::body (s/or :map? map? :str string?))
 
 (s/def ::input
   (s/keys :req-un [::method
