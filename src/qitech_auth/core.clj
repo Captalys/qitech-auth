@@ -13,13 +13,15 @@
 (s/def ::method #{"GET" "POST" "PUT" "OPTION"})
 (s/def ::content-type string?)
 (s/def ::endpoint string?)
-(s/def ::body (s/or :map? map? :str string?))
+(s/def ::body map?)
+(s/def ::file string?)
 
 (s/def ::input
   (s/keys :req-un [::method
                    ::endpoint]
           :opt-un [::content-type
-                   ::body]))
+                   ::body
+                   ::file]))
 
 (defn- read-pkey [pkey]
   (let [env-data (or (System/getenv pkey) "")
@@ -76,7 +78,10 @@
   {:pre [(s/valid? ::input input)]}
   (let [{:keys [client-api-key] :as keys} (get-keys)
         encoded-body (encode-body (merge keys input))
-        md5-body (if (nil? encoded-body) "" (md5 encoded-body))
+        md5-body (cond
+                   (some? (:file input)) (md5 (:file input))
+                   (nil? encoded-body) ""
+                   :else (md5 encoded-body))
         encoded-header-token (encode-header (->> md5-body
                                                  (assoc (merge keys input)
                                                         :md5-body)))]

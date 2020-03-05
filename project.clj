@@ -1,4 +1,4 @@
-(defproject qitech-auth "1.0.2"
+(defproject qitech-auth "1.0.3"
   :description "QI-TECH sign/unsign requests"
   :url "http://github.com/wandersoncferreira/qitech-auth"
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
