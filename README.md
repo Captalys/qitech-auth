@@ -8,12 +8,12 @@ requests to QI TECH services.
 Leinigen/Boot
 
 ```clj
-[qitech-auth "1.0.1"]
+[qitech-auth "1.0.2"]
 ```
 
 Clojure CLI/deps.edn
 ```clj
-qitech-auth {:mvn/version "1.0.1"}
+qitech-auth {:mvn/version "1.0.2"}
 ```
 
 Maven
@@ -21,7 +21,7 @@ Maven
 <dependency>
   <groupId>qitech-auth</groupId>
   <artifactId>qitech-auth</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 
