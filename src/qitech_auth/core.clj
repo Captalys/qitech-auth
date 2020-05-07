@@ -28,7 +28,7 @@
 (defn- read-pkey [pkey]
   (let [env-data (or (System/getenv pkey) "")
         base64 (cstr/replace env-data #"\s" "")
-        base64 (cstr/replace env-data "\n" "")]
+        base64 (cstr/replace base64 "\n" "")]
     (if (empty? base64)
       (throw (ex-info (format "No %s key was found!" (cstr/upper-case pkey)) {:pkey pkey}))
       (->> base64
